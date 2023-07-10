@@ -1,0 +1,33 @@
+Please add the cURLs of your tests here:
+
+curl --location 'https://localhost:7629/showtimes/create' \
+--header 'Content-Type: application/json' \
+--data '{
+    "MovieId": "1",
+    "SessionDate": "2023-08-12",
+    "AuditoriumId": "3"
+}'
+
+curl --location 'https://localhost:7629/seats/reserve' \
+--header 'Content-Type: application/json' \
+--data '{
+    "ShowtimeId":"1",
+    "Seats":[
+        {
+        "Row": "5",
+        "SeatNumber": "16",
+        "AuditoriumId": "2"
+        },
+        {
+        "Row": "5",
+        "SeatNumber": "17",
+        "AuditoriumId": "2"
+        }
+    ]
+}'
+
+curl --location 'https://localhost:7629/seats/buy' \
+--header 'Content-Type: application/json' \
+--data '{
+    "ReservationId": "93f96265-b74c-4e67-8fef-df8caf5ec037"
+}'
